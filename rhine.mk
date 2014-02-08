@@ -174,6 +174,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     XperiaSettings
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/install/c6x02.sh:c6x02.sh
 
 # Set default USB interface
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
