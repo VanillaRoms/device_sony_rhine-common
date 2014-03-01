@@ -54,7 +54,8 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/rootdir/fstab.qcom:root/fstab.qcom \
-    $(COMMON_PATH)/rootdir/fstab.qcom:recovery/root/fstab.qcom
+    $(COMMON_PATH)/rootdir/fstab.qcom:recovery/root/fstab.qcom \
+    $(COMMON_PATH)/rootdir/twrp.fstab:recovery/root/twrp.fstab
 
 # Wifi config and firmware
 PRODUCT_COPY_FILES += \
