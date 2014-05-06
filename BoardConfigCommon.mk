@@ -13,12 +13,12 @@
 # limitations under the License.
 
 # inherit from Sony common
--include device/sony/common/BoardConfigCommon.mk
+include device/sony/common/BoardConfigCommon.mk
 
 BOARD_EGL_CFG := device/sony/rhine-common/rootdir/system/lib/egl/egl.cfg
 
 # inherit from qcom-common
--include device/sony/qcom-common/BoardConfigCommon.mk
+include device/sony/qcom-common/BoardConfigCommon.mk
 
 TARGET_SPECIFIC_HEADER_PATH := device/sony/rhine-common/include
 
@@ -43,7 +43,7 @@ TARGET_USE_KRAIT_BIONIC_OPTIMIZATION := true
 # Kernel information
 BOARD_KERNEL_BASE     := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_KERNEL_CMDLINE  := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 msm_rtb.enable=0 lpj=192598 dwc3.maximum_speed=high dwc3_msm.prop_chg_detect=Y androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE  := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 msm_rtb.enable=0 lpj=192598 dwc3.maximum_speed=high dwc3_msm.prop_chg_detect=Y
 BOARD_MKBOOTIMG_ARGS  := --ramdisk_offset 0x02000000 --tags_offset 0x01E00000
 BOARD_CUSTOM_BOOTIMG_MK := device/sony/rhine-common/custombootimg.mk
 BOARD_KERNEL_SEPARATED_DT := true
@@ -87,9 +87,6 @@ TARGET_PROVIDES_GPS_LOC_API := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
-#pre-kitkat blobs
-COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
-
 # Shader cache config options
 # Maximum size of the  GLES Shaders that can be cached for reuse.
 # Increase the size if shaders of size greater than 12KB are used.
@@ -112,8 +109,6 @@ BOARD_SEPOLICY_UNION := \
     device.te \
     app.te \
     file_contexts
-
-
 
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true
@@ -161,7 +156,7 @@ TW_INCLUDE_FUSE_EXFAT := true
 TW_BOARD_CUSTOM_GRAPHICS := ../../../device/sony/rhine-common/recovery/twrpgraphics.c
 TW_BRIGHTNESS_PATH := /sys/class/leds/wled:backlight/brightness
 TW_MAX_BRIGHTNESS := 4095
-#TW_NO_USB_STORAGE := true
+TW_NO_USB_STORAGE := true
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/sony/rhine-common
