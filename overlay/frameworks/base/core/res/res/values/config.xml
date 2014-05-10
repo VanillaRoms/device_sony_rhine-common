@@ -156,4 +156,7 @@
 
     <!-- Enable lockscreen translucent decor -->
     <bool name="config_enableLockScreenTranslucentDecor">true</bool>
+
+    <!-- SD card is hot-pluggable on this platform -->
+    <bool name="config_batterySdCardAccessibility">true</bool>
 </resources>
